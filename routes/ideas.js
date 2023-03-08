@@ -1,3 +1,4 @@
+const { request } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -39,6 +40,21 @@ router.get('/:id', (req, res) => {
             .status(404)
             .json({ success: false, error: 'Resource not found' });
     }
+
+    res.json({ success: true, data: idea });
+});
+
+// Add an idea
+router.post('/', (req, res) => {
+    const idea = {
+        id: ideas.length + 1,
+        text: req.body.text,
+        tag: req.body.tag,
+        username: req.body.username,
+        date: new Date().toISOString().slice(0, 10),
+    };
+
+    ideas.push(idea);
 
     res.json({ success: true, data: idea });
 });
