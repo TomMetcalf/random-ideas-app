@@ -1,0 +1,16 @@
+{
+  "name": "randomideas-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js" 
+
+  },
+  "keywords": [],
+  "author": "Tom Metcalf",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
